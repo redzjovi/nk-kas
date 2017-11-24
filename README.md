@@ -7,4 +7,4 @@ Kas with Codeigniter 3.
 - In database/, import .sql to your database
 
 ## Demo
-[kas](https://localhost/kas)
+[kas](https://localhost/kas), kusumon, 12345678
