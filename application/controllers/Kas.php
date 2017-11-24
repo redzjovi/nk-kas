@@ -43,21 +43,13 @@ class Kas extends CI_Controller
         $this->load->view('kas/permin_kas/add/index',$data);
     }
 
-    public function remove_jumlah_format($jumlah) {
-    $jumlah = filter_var($jumlah, FILTER_SANITIZE_jumlah_FLOAT, FILTER_FLAG_ALLOW_THOUSAND);
-    $jumlah = abs($jumlah);
-    return $jumlah;
-    }
-    
-    //var_dump(remove_jumlah_format($jumlah));
-
     public function add()
     {
         $data = array (
             'date' => $this->input->post('date'),
             'jenis_pengeluaran' => $this->input->post('jenis_pengeluaran'),
             'divisi' => $this->input->post('divisi'),
-            'jumlah' => $this->input->post('jumlah'),
+            'jumlah' => remove_number_format($this->input->post('jumlah')), // number_helper
             'keterangan' => $this->input->post('keterangan'),
             'status' => $this->input->post('status')
         );
